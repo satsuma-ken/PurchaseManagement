@@ -1,0 +1,229 @@
+﻿# A5:ER FORMAT:13
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=PurchaseManagement
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=10
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSTypeName=Oracle Database
+CommonField="削除フラグ","delete_flag","@INT","NOT NULL",,"0","0: 未削除、1: 削除済み",$FFFFFFFF
+CommonField="作成者","create_user","@VARCHAR",,,"","",$FFFFFFFF
+CommonField="作成日","create_datetime","@DATETIME",,,"","",$FFFFFFFF
+CommonField="更新者","update_user","@VARCHAR",,,"","",$FFFFFFFF
+CommonField="更新日","update_datetime","@DATETIME",,,"","",$FFFFFFFF
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=1
+
+[Entity]
+PName=m_companies
+LName=企業マスタ
+Comment=本プロジェクトで扱う企業データマスタです。
+TableOption=
+Page=MAIN
+Left=400
+Top=500
+Field="企業ID","company_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
+Field="企業名","company_name","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200509182624
+Position="MAIN",400,500,296,307
+ZOrder=0
+
+[Entity]
+PName=NEW_ENTITY1
+LName=部署マスタ
+Comment=本プロジェクトで扱う企業データマスタです。
+TableOption=
+Page=MAIN
+Left=400
+Top=1500
+Field="仕入先ID","vendor_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
+Field="企業ID","company_id","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="部署名","department_name","@VARCHAR",,,"","",$FFFFFFFF,""
+Field="連絡先","contact","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="郵便番号","post_number","@VARCHAR",,,"","",$FFFFFFFF,""
+Field="所在地","address","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="代表者","representative","@VARCHAR",,,"","",$FFFFFFFF,""
+Field="支払口座","payment_account","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200509190601
+Position="MAIN",400,1500,296,550
+ZOrder=1
+
+[Entity]
+PName=NEW_ENTITY2
+LName=請求ヘッダ
+Comment=本プロジェクトで扱う企業データマスタです。
+TableOption=
+Page=MAIN
+Left=1000
+Top=500
+Field="請求書ID","invoice_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
+Field="請求書番号","invoice_number","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="仕入先ID","vendor_id","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="発行日","publish_date","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="支払期限","limit","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="支払方法","terms","@INT","NOT NULL",,"0","0: 振込、1: 引落とし",$FFFFFFFF,""
+Field="通貨ID","currency_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="支払済フラグ","payed_flag","@INT","NOT NULL",,"0","0: 未払い、1: 支払済",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200509190653
+Position="MAIN",1000,500,299,550
+ZOrder=2
+
+[Entity]
+PName=NEW_ENTITY3
+LName=請求明細
+Comment=本プロジェクトで扱う企業データマスタです。
+TableOption=
+Page=MAIN
+Left=1000
+Top=1500
+Field="請求書ID","invoice_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
+Field="請求書明細番号","invoice_detail_number","@INT","NOT NULL",1,"","",$FFFFFFFF,""
+Field="型番","part_number","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="品名","part_name","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="単価","unit_price","@FLOAT","NOT NULL",,"","",$FFFFFFFF,""
+Field="数量","quantity","@INT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200509185916
+Position="MAIN",1000,1500,296,466
+ZOrder=3
+
+[Entity]
+PName=NEW_ENTITY4
+LName=通貨マスタ
+Comment=本プロジェクトで扱う企業データマスタです。
+TableOption=
+Page=MAIN
+Left=1600
+Top=500
+Field="通貨ID","currency_id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="通貨名","currency_name","@VARCHAR","NOT NULL",,"","例)円",$FFFFFFFF,""
+Field="通貨記号","currency_mark","@VARCHAR","NOT NULL",,"","例)￥",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200509190843
+Position="MAIN",1600,500,394,339
+ZOrder=4
+
+[Relation]
+Entity1=NEW_ENTITY2
+Entity2=NEW_ENTITY3
+RelationType1=2
+RelationType2=3
+Fields1=invoice_id
+Fields2=invoice_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,6729,7161,6797,R,R
+Dependence=1
+Caption=
+PName=
+LineMode=0
+Bar1=673
+Bar2=716
+Bar3=680
+TermPos1=R
+TermPos2=R
+ZOrder=5
+
+[Relation]
+Entity1=m_companies
+Entity2=NEW_ENTITY1
+RelationType1=2
+RelationType2=3
+Fields1=company_id
+Fields2=company_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3470,6148,3470,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=347
+Bar2=615
+Bar3=347
+TermPos1=R
+TermPos2=R
+ZOrder=6
+
+[Relation]
+Entity1=NEW_ENTITY4
+Entity2=NEW_ENTITY2
+RelationType1=2
+RelationType2=3
+Fields1=currency_id
+Fields2=currency_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,5934,7047,3658,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=593
+Bar2=705
+Bar3=366
+TermPos1=R
+TermPos2=R
+ZOrder=7
+
+[Relation]
+Entity1=NEW_ENTITY1
+Entity2=NEW_ENTITY2
+RelationType1=2
+RelationType2=3
+Fields1=vendor_id
+Fields2=vendor_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,6777,5083,3278,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20200509191147
+LineMode=0
+Bar1=678
+Bar2=508
+Bar3=328
+TermPos1=R
+TermPos2=R
+ZOrder=8
