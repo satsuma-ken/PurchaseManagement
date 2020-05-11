@@ -39,7 +39,7 @@ DefaultIndexName=%0:s_IX%1:d
 DefaultFkName=%0:s_FK%1:d
 SqlSeparator=0
 ShowTag=1
-ShowCommonAttributes=1
+ShowCommonAttributes=0
 
 [Entity]
 PName=m_companies
@@ -55,7 +55,7 @@ EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20200509182624
-Position="MAIN",400,500,296,307
+Position="MAIN",400,500,296,394
 ZOrder=0
 
 [Entity]
@@ -65,7 +65,7 @@ Comment=本プロジェクトで扱う企業データマスタです。
 TableOption=
 Page=MAIN
 Left=400
-Top=1500
+Top=1200
 Field="仕入先ID","vendor_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
 Field="企業ID","company_id","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
 Field="部署名","department_name","@VARCHAR",,,"","",$FFFFFFFF,""
@@ -78,7 +78,7 @@ EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20200509190601
-Position="MAIN",400,1500,296,550
+Position="MAIN",400,1200,296,392
 ZOrder=1
 
 [Entity]
@@ -89,8 +89,8 @@ TableOption=
 Page=MAIN
 Left=1000
 Top=500
-Field="請求書ID","invoice_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
-Field="請求書番号","invoice_number","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="請求ID","invoice_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
+Field="請求番号","invoice_number","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
 Field="仕入先ID","vendor_id","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
 Field="発行日","publish_date","@DATE","NOT NULL",,"","",$FFFFFFFF,""
 Field="支払期限","limit","@DATE","NOT NULL",,"","",$FFFFFFFF,""
@@ -100,8 +100,8 @@ Field="支払済フラグ","payed_flag","@INT","NOT NULL",,"0","0: 未払い、1
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20200509190653
-Position="MAIN",1000,500,299,550
+ModifiedDateTime=20200509191845
+Position="MAIN",1000,500,299,397
 ZOrder=2
 
 [Entity]
@@ -111,9 +111,9 @@ Comment=本プロジェクトで扱う企業データマスタです。
 TableOption=
 Page=MAIN
 Left=1000
-Top=1500
-Field="請求書ID","invoice_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
-Field="請求書明細番号","invoice_detail_number","@INT","NOT NULL",1,"","",$FFFFFFFF,""
+Top=1200
+Field="請求ID","invoice_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
+Field="請求明細番号","invoice_detail_number","@INT","NOT NULL",1,"","",$FFFFFFFF,""
 Field="型番","part_number","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
 Field="品名","part_name","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
 Field="単価","unit_price","@FLOAT","NOT NULL",,"","",$FFFFFFFF,""
@@ -121,8 +121,8 @@ Field="数量","quantity","@INT","NOT NULL",,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20200509185916
-Position="MAIN",1000,1500,296,466
+ModifiedDateTime=20200509191900
+Position="MAIN",1000,1200,296,394
 ZOrder=3
 
 [Entity]
@@ -140,7 +140,7 @@ EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20200509190843
-Position="MAIN",1600,500,394,339
+Position="MAIN",1600,500,296,394
 ZOrder=4
 
 [Relation]
@@ -194,14 +194,14 @@ Fields1=currency_id
 Fields2=currency_id
 Cardinarity1=
 Cardinarity2=
-Position="MAIN",0,5934,7047,3658,R,R
+Position="MAIN",0,5105,7047,5066,R,R
 Dependence=0
 Caption=
 PName=
 LineMode=0
-Bar1=593
+Bar1=510
 Bar2=705
-Bar3=366
+Bar3=507
 TermPos1=R
 TermPos2=R
 ZOrder=7
@@ -215,14 +215,14 @@ Fields1=vendor_id
 Fields2=vendor_id
 Cardinarity1=
 Cardinarity2=
-Position="MAIN",0,6777,5083,3278,R,R
+Position="MAIN",0,6777,1890,3278,R,R
 Dependence=0
 Caption=
 PName=
 ModifiedDateTime=20200509191147
 LineMode=0
 Bar1=678
-Bar2=508
+Bar2=189
 Bar3=328
 TermPos1=R
 TermPos2=R
