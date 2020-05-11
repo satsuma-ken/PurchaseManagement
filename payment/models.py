@@ -4,9 +4,9 @@ from django.db import models
 class Payment_Model(models.Model):
     delete_flag = models.IntegerField(default=0, null=True)
     create_user = models.CharField(max_length=20, null=True, editable=False)
-    create_date = models.DateField(auto_now_add=True, null=True, editable=False)
+    create_datetime = models.DateTimeField(auto_now_add=True, null=True, editable=False)
     update_user = models.CharField(max_length=20, null=True, editable=False)
-    update_date = models.DateField(auto_now=True, null=True, editable=False)
+    update_datetime = models.DateTimeField(auto_now=True, null=True, editable=False)
 
     class Meta:
         abstract = True
