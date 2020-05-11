@@ -12,7 +12,7 @@ class Payment_Model(models.Model):
         abstract = True
 
 # 企業マスタ
-class Companies(Payment_Model):
+class Company(Payment_Model):
     company_id = models.CharField(primary_key=True, max_length=20)
     company_name = models.CharField(max_length=50)
 
@@ -20,9 +20,9 @@ class Companies(Payment_Model):
         return self.company_name
 
 # 部署マスタ
-class Departments(Payment_Model):
+class Department(Payment_Model):
     vendor_id = models.CharField(primary_key=True, max_length=20)
-    company_id = models.ForeignKey(Companies, on_delete=models.CASCADE)
+    company_id = models.ForeignKey(Company, on_delete=models.CASCADE)
     department_name = models.CharField(max_length=50, null=True)
     contact = models.CharField(max_length=50)
     post_number = models.CharField(max_length=20)
@@ -34,7 +34,7 @@ class Departments(Payment_Model):
         return self.department_name
 
 # 通貨マスタ
-class Currencies(Payment_Model):
+class Currency(Payment_Model):
     currency_id = models.IntegerField(primary_key=True)
     currency_name = models.CharField(max_length=20)
     currency_mark = models.CharField(max_length=20)
@@ -46,11 +46,11 @@ class Currencies(Payment_Model):
 class Bills_Header(Payment_Model):
     invoice_id = models.CharField(primary_key=True, max_length=20)
     invoice_number = models.CharField(max_length=50)
-    vendor_id = models.ForeignKey(Departments, on_delete=models.PROTECT)
+    vendor_id = models.ForeignKey(Department, on_delete=models.PROTECT)
     publish_date = models.DateField(auto_now_add=True)
     limit = models.DateField(auto_now_add=True)
     terms = models.IntegerField(default=0)
-    currency_id = models.ForeignKey(Currencies, on_delete=models.CASCADE)
+    currency_id = models.ForeignKey(Currency, on_delete=models.CASCADE)
     payed_flag = models.IntegerField(default=0)
 
     def __str__(self):

@@ -1,53 +1,53 @@
-TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,LOGICAL_NAME,ORDINAL_POSITION,COLUMN_DEFAULT,IS_NULLABLE,DATA_TYPE,KEY_POSITION,DESCRIPTION
-PurchaseManagement,,m_companies,company_id,ä¼æ¥­ID,1,,NO,@VARCHAR,1,
-PurchaseManagement,,m_companies,company_name,ä¼æ¥­å,2,,NO,@VARCHAR,,
-PurchaseManagement,,m_companies,delete_flag,å‰Šé™¤ãƒ•ãƒ©ã‚°,3,0,NO,@INT,,0: æœªå‰Šé™¤ã€1: å‰Šé™¤æ¸ˆã¿
-PurchaseManagement,,m_companies,create_user,ä½œæˆè€…,4,,YES,@VARCHAR,,
-PurchaseManagement,,m_companies,create_datetime,ä½œæˆæ—¥,5,,YES,@DATETIME,,
-PurchaseManagement,,m_companies,update_user,æ›´æ–°è€…,6,,YES,@VARCHAR,,
-PurchaseManagement,,m_companies,update_datetime,æ›´æ–°æ—¥,7,,YES,@DATETIME,,
-PurchaseManagement,,m_currency,currency_id,é€šè²¨ID,1,,NO,@INT,1,
-PurchaseManagement,,m_currency,currency_name,é€šè²¨å,2,,NO,@VARCHAR,,ä¾‹)å††
-PurchaseManagement,,m_currency,currency_mark,é€šè²¨è¨˜å·,3,,NO,@VARCHAR,,ä¾‹)ï¿¥
-PurchaseManagement,,m_currency,delete_flag,å‰Šé™¤ãƒ•ãƒ©ã‚°,4,0,NO,@INT,,0: æœªå‰Šé™¤ã€1: å‰Šé™¤æ¸ˆã¿
-PurchaseManagement,,m_currency,create_user,ä½œæˆè€…,5,,YES,@VARCHAR,,
-PurchaseManagement,,m_currency,create_datetime,ä½œæˆæ—¥,6,,YES,@DATETIME,,
-PurchaseManagement,,m_currency,update_user,æ›´æ–°è€…,7,,YES,@VARCHAR,,
-PurchaseManagement,,m_currency,update_datetime,æ›´æ–°æ—¥,8,,YES,@DATETIME,,
-PurchaseManagement,,m_department,vendor_id,ä»•å…¥å…ˆID,1,,NO,@VARCHAR,1,
-PurchaseManagement,,m_department,company_id,ä¼æ¥­ID,2,,NO,@VARCHAR,,
-PurchaseManagement,,m_department,department_name,éƒ¨ç½²å,3,,YES,@VARCHAR,,
-PurchaseManagement,,m_department,contact,é€£çµ¡å…ˆ,4,,NO,@VARCHAR,,
-PurchaseManagement,,m_department,post_number,éƒµä¾¿ç•ªå·,5,,YES,@VARCHAR,,
-PurchaseManagement,,m_department,address,æ‰€åœ¨åœ°,6,,NO,@VARCHAR,,
-PurchaseManagement,,m_department,representative,ä»£è¡¨è€…,7,,YES,@VARCHAR,,
-PurchaseManagement,,m_department,payment_account,æ”¯æ‰•å£åº§,8,,NO,@VARCHAR,,
-PurchaseManagement,,m_department,delete_flag,å‰Šé™¤ãƒ•ãƒ©ã‚°,9,0,NO,@INT,,0: æœªå‰Šé™¤ã€1: å‰Šé™¤æ¸ˆã¿
-PurchaseManagement,,m_department,create_user,ä½œæˆè€…,10,,YES,@VARCHAR,,
-PurchaseManagement,,m_department,create_datetime,ä½œæˆæ—¥,11,,YES,@DATETIME,,
-PurchaseManagement,,m_department,update_user,æ›´æ–°è€…,12,,YES,@VARCHAR,,
-PurchaseManagement,,m_department,update_datetime,æ›´æ–°æ—¥,13,,YES,@DATETIME,,
-PurchaseManagement,,t_bills_detail,invoice_id,è«‹æ±‚ID,1,,NO,@VARCHAR,1,
-PurchaseManagement,,t_bills_detail,invoice_detail_number,è«‹æ±‚æ˜ç´°ç•ªå·,2,,NO,@INT,2,
-PurchaseManagement,,t_bills_detail,part_number,å‹ç•ª,3,,NO,@VARCHAR,,
-PurchaseManagement,,t_bills_detail,part_name,å“å,4,,NO,@VARCHAR,,
-PurchaseManagement,,t_bills_detail,unit_price,å˜ä¾¡,5,,NO,@FLOAT,,
-PurchaseManagement,,t_bills_detail,quantity,æ•°é‡,6,,NO,@INT,,
-PurchaseManagement,,t_bills_detail,delete_flag,å‰Šé™¤ãƒ•ãƒ©ã‚°,7,0,NO,@INT,,0: æœªå‰Šé™¤ã€1: å‰Šé™¤æ¸ˆã¿
-PurchaseManagement,,t_bills_detail,create_user,ä½œæˆè€…,8,,YES,@VARCHAR,,
-PurchaseManagement,,t_bills_detail,create_datetime,ä½œæˆæ—¥,9,,YES,@DATETIME,,
-PurchaseManagement,,t_bills_detail,update_user,æ›´æ–°è€…,10,,YES,@VARCHAR,,
-PurchaseManagement,,t_bills_detail,update_datetime,æ›´æ–°æ—¥,11,,YES,@DATETIME,,
-PurchaseManagement,,t_bills_header,invoice_id,è«‹æ±‚ID,1,,NO,@VARCHAR,1,
-PurchaseManagement,,t_bills_header,invoice_number,è«‹æ±‚ç•ªå·,2,,NO,@VARCHAR,,
-PurchaseManagement,,t_bills_header,vendor_id,ä»•å…¥å…ˆID,3,,NO,@VARCHAR,,
-PurchaseManagement,,t_bills_header,publish_date,ç™ºè¡Œæ—¥,4,,NO,@DATE,,
-PurchaseManagement,,t_bills_header,limit,æ”¯æ‰•æœŸé™,5,,NO,@DATE,,
-PurchaseManagement,,t_bills_header,terms,æ”¯æ‰•æ–¹æ³•,6,0,NO,@INT,,0: æŒ¯è¾¼ã€1: å¼•è½ã¨ã—
-PurchaseManagement,,t_bills_header,currency_id,é€šè²¨ID,7,,NO,@INT,,
-PurchaseManagement,,t_bills_header,payed_flag,æ”¯æ‰•æ¸ˆãƒ•ãƒ©ã‚°,8,0,NO,@INT,,0: æœªæ‰•ã„ã€1: æ”¯æ‰•æ¸ˆ
-PurchaseManagement,,t_bills_header,delete_flag,å‰Šé™¤ãƒ•ãƒ©ã‚°,9,0,NO,@INT,,0: æœªå‰Šé™¤ã€1: å‰Šé™¤æ¸ˆã¿
-PurchaseManagement,,t_bills_header,create_user,ä½œæˆè€…,10,,YES,@VARCHAR,,
-PurchaseManagement,,t_bills_header,create_datetime,ä½œæˆæ—¥,11,,YES,@DATETIME,,
-PurchaseManagement,,t_bills_header,update_user,æ›´æ–°è€…,12,,YES,@VARCHAR,,
-PurchaseManagement,,t_bills_header,update_datetime,æ›´æ–°æ—¥,13,,YES,@DATETIME,,
+TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,LOGICAL_NAME,ORDINAL_POSITION,COLUMN_DEFAULT,IS_NULLABLE,DATA_TYPE,KEY_POSITION,DESCRIPTION,LIMIT
+PurchaseManagement,,m_companies,company_id,Šé‹ÆID,1,,NO,@VARCHAR,1,,20
+PurchaseManagement,,m_companies,company_name,Šé‹Æ–¼,2,,NO,@VARCHAR,,,50
+PurchaseManagement,,m_companies,delete_flag,íœƒtƒ‰ƒO,3,0,NO,@INT,,0: –¢íœA1: íœÏ‚İ,
+PurchaseManagement,,m_companies,create_user,ì¬Ò,4,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_companies,create_datetime,ì¬“ú,5,,YES,@DATETIME,,,
+PurchaseManagement,,m_companies,update_user,XVÒ,6,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_companies,update_datetime,XV“ú,7,,YES,@DATETIME,,,
+PurchaseManagement,,m_currency,currency_id,’Ê‰İID,1,,NO,@INT,1,,
+PurchaseManagement,,m_currency,currency_name,’Ê‰İ–¼,2,,NO,@VARCHAR,,—á)‰~,20
+PurchaseManagement,,m_currency,currency_mark,’Ê‰İ‹L†,3,,NO,@VARCHAR,,—á),20
+PurchaseManagement,,m_currency,delete_flag,íœƒtƒ‰ƒO,4,0,NO,@INT,,0: –¢íœA1: íœÏ‚İ,10
+PurchaseManagement,,m_currency,create_user,ì¬Ò,5,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_currency,create_datetime,ì¬“ú,6,,YES,@DATETIME,,,
+PurchaseManagement,,m_currency,update_user,XVÒ,7,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_currency,update_datetime,XV“ú,8,,YES,@DATETIME,,,
+PurchaseManagement,,m_department,vendor_id,d“üæID,1,,NO,@VARCHAR,1,,20
+PurchaseManagement,,m_department,company_id,Šé‹ÆID,2,,NO,@VARCHAR,,,20
+PurchaseManagement,,m_department,department_name,•”–¼,3,,YES,@VARCHAR,,,50
+PurchaseManagement,,m_department,contact,˜A—æ,4,,NO,@VARCHAR,,,50
+PurchaseManagement,,m_department,post_number,—X•Ö”Ô†,5,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_department,address,Šİ’n,6,,NO,@VARCHAR,,,100
+PurchaseManagement,,m_department,representative,‘ã•\Ò,7,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_department,payment_account,x•¥ŒûÀ,8,,NO,@VARCHAR,,,100
+PurchaseManagement,,m_department,delete_flag,íœƒtƒ‰ƒO,9,0,NO,@INT,,0: –¢íœA1: íœÏ‚İ,
+PurchaseManagement,,m_department,create_user,ì¬Ò,10,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_department,create_datetime,ì¬“ú,11,,YES,@DATETIME,,,
+PurchaseManagement,,m_department,update_user,XVÒ,12,,YES,@VARCHAR,,,20
+PurchaseManagement,,m_department,update_datetime,XV“ú,13,,YES,@DATETIME,,,
+PurchaseManagement,,t_bills_detail,invoice_id,¿‹ID,1,,NO,@VARCHAR,1,,20
+PurchaseManagement,,t_bills_detail,invoice_detail_number,¿‹–¾×”Ô†,2,,NO,@INT,2,,
+PurchaseManagement,,t_bills_detail,part_number,Œ^”Ô,3,,NO,@VARCHAR,,,50
+PurchaseManagement,,t_bills_detail,part_name,•i–¼,4,,NO,@VARCHAR,,,50
+PurchaseManagement,,t_bills_detail,unit_price,’P‰¿,5,,NO,@FLOAT,,,
+PurchaseManagement,,t_bills_detail,quantity,”—Ê,6,,NO,@INT,,,
+PurchaseManagement,,t_bills_detail,delete_flag,íœƒtƒ‰ƒO,7,0,NO,@INT,,0: –¢íœA1: íœÏ‚İ,
+PurchaseManagement,,t_bills_detail,create_user,ì¬Ò,8,,YES,@VARCHAR,,,20
+PurchaseManagement,,t_bills_detail,create_datetime,ì¬“ú,9,,YES,@DATETIME,,,
+PurchaseManagement,,t_bills_detail,update_user,XVÒ,10,,YES,@VARCHAR,,,20
+PurchaseManagement,,t_bills_detail,update_datetime,XV“ú,11,,YES,@DATETIME,,,
+PurchaseManagement,,t_bills_header,invoice_id,¿‹ID,1,,NO,@VARCHAR,1,,20
+PurchaseManagement,,t_bills_header,invoice_number,¿‹”Ô†,2,,NO,@VARCHAR,,,50
+PurchaseManagement,,t_bills_header,vendor_id,d“üæID,3,,NO,@VARCHAR,,,20
+PurchaseManagement,,t_bills_header,publish_date,”­s“ú,4,,NO,@DATE,,,
+PurchaseManagement,,t_bills_header,limit,x•¥ŠúŒÀ,5,,NO,@DATE,,,
+PurchaseManagement,,t_bills_header,terms,x•¥•û–@,6,0,NO,@INT,,0: UA1: ˆø—‚Æ‚µ,
+PurchaseManagement,,t_bills_header,currency_id,’Ê‰İID,7,,NO,@INT,,,
+PurchaseManagement,,t_bills_header,payed_flag,x•¥Ïƒtƒ‰ƒO,8,0,NO,@INT,,0: –¢•¥‚¢A1: x•¥Ï,
+PurchaseManagement,,t_bills_header,delete_flag,íœƒtƒ‰ƒO,9,0,NO,@INT,,0: –¢íœA1: íœÏ‚İ,
+PurchaseManagement,,t_bills_header,create_user,ì¬Ò,10,,YES,@VARCHAR,,,20
+PurchaseManagement,,t_bills_header,create_datetime,ì¬“ú,11,,YES,@DATETIME,,,
+PurchaseManagement,,t_bills_header,update_user,XVÒ,12,,YES,@VARCHAR,,,20
+PurchaseManagement,,t_bills_header,update_datetime,XV“ú,13,,YES,@DATETIME,,,
