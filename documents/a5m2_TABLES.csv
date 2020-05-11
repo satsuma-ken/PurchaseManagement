@@ -1,0 +1,6 @@
+TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,LOGICAL_NAME,TABLE_TYPE,DESCRIPTION,TAG
+PurchaseManagement,,m_companies,企業マスタ,BASE TABLE,本プロジェクトで扱う企業データマスタです。,
+PurchaseManagement,,m_currency,通貨マスタ,BASE TABLE,請求情報に適用する通貨マスタです。,
+PurchaseManagement,,m_department,部署マスタ,BASE TABLE,企業内の部署マスタです。,
+PurchaseManagement,,t_bills_detail,請求明細,BASE TABLE,請求明細です。,
+PurchaseManagement,,t_bills_header,請求ヘッダ,BASE TABLE,請求のヘッダ情報です。,

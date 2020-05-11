@@ -1,0 +1,53 @@
+TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,LOGICAL_NAME,ORDINAL_POSITION,COLUMN_DEFAULT,IS_NULLABLE,DATA_TYPE,KEY_POSITION,DESCRIPTION
+PurchaseManagement,,m_companies,company_id,企業ID,1,,NO,@VARCHAR,1,
+PurchaseManagement,,m_companies,company_name,企業名,2,,NO,@VARCHAR,,
+PurchaseManagement,,m_companies,delete_flag,削除フラグ,3,0,NO,@INT,,0: 未削除、1: 削除済み
+PurchaseManagement,,m_companies,create_user,作成者,4,,YES,@VARCHAR,,
+PurchaseManagement,,m_companies,create_datetime,作成日,5,,YES,@DATETIME,,
+PurchaseManagement,,m_companies,update_user,更新者,6,,YES,@VARCHAR,,
+PurchaseManagement,,m_companies,update_datetime,更新日,7,,YES,@DATETIME,,
+PurchaseManagement,,m_currency,currency_id,通貨ID,1,,NO,@INT,1,
+PurchaseManagement,,m_currency,currency_name,通貨名,2,,NO,@VARCHAR,,例)円
+PurchaseManagement,,m_currency,currency_mark,通貨記号,3,,NO,@VARCHAR,,例)￥
+PurchaseManagement,,m_currency,delete_flag,削除フラグ,4,0,NO,@INT,,0: 未削除、1: 削除済み
+PurchaseManagement,,m_currency,create_user,作成者,5,,YES,@VARCHAR,,
+PurchaseManagement,,m_currency,create_datetime,作成日,6,,YES,@DATETIME,,
+PurchaseManagement,,m_currency,update_user,更新者,7,,YES,@VARCHAR,,
+PurchaseManagement,,m_currency,update_datetime,更新日,8,,YES,@DATETIME,,
+PurchaseManagement,,m_department,vendor_id,仕入先ID,1,,NO,@VARCHAR,1,
+PurchaseManagement,,m_department,company_id,企業ID,2,,NO,@VARCHAR,,
+PurchaseManagement,,m_department,department_name,部署名,3,,YES,@VARCHAR,,
+PurchaseManagement,,m_department,contact,連絡先,4,,NO,@VARCHAR,,
+PurchaseManagement,,m_department,post_number,郵便番号,5,,YES,@VARCHAR,,
+PurchaseManagement,,m_department,address,所在地,6,,NO,@VARCHAR,,
+PurchaseManagement,,m_department,representative,代表者,7,,YES,@VARCHAR,,
+PurchaseManagement,,m_department,payment_account,支払口座,8,,NO,@VARCHAR,,
+PurchaseManagement,,m_department,delete_flag,削除フラグ,9,0,NO,@INT,,0: 未削除、1: 削除済み
+PurchaseManagement,,m_department,create_user,作成者,10,,YES,@VARCHAR,,
+PurchaseManagement,,m_department,create_datetime,作成日,11,,YES,@DATETIME,,
+PurchaseManagement,,m_department,update_user,更新者,12,,YES,@VARCHAR,,
+PurchaseManagement,,m_department,update_datetime,更新日,13,,YES,@DATETIME,,
+PurchaseManagement,,t_bills_detail,invoice_id,請求ID,1,,NO,@VARCHAR,1,
+PurchaseManagement,,t_bills_detail,invoice_detail_number,請求明細番号,2,,NO,@INT,2,
+PurchaseManagement,,t_bills_detail,part_number,型番,3,,NO,@VARCHAR,,
+PurchaseManagement,,t_bills_detail,part_name,品名,4,,NO,@VARCHAR,,
+PurchaseManagement,,t_bills_detail,unit_price,単価,5,,NO,@FLOAT,,
+PurchaseManagement,,t_bills_detail,quantity,数量,6,,NO,@INT,,
+PurchaseManagement,,t_bills_detail,delete_flag,削除フラグ,7,0,NO,@INT,,0: 未削除、1: 削除済み
+PurchaseManagement,,t_bills_detail,create_user,作成者,8,,YES,@VARCHAR,,
+PurchaseManagement,,t_bills_detail,create_datetime,作成日,9,,YES,@DATETIME,,
+PurchaseManagement,,t_bills_detail,update_user,更新者,10,,YES,@VARCHAR,,
+PurchaseManagement,,t_bills_detail,update_datetime,更新日,11,,YES,@DATETIME,,
+PurchaseManagement,,t_bills_header,invoice_id,請求ID,1,,NO,@VARCHAR,1,
+PurchaseManagement,,t_bills_header,invoice_number,請求番号,2,,NO,@VARCHAR,,
+PurchaseManagement,,t_bills_header,vendor_id,仕入先ID,3,,NO,@VARCHAR,,
+PurchaseManagement,,t_bills_header,publish_date,発行日,4,,NO,@DATE,,
+PurchaseManagement,,t_bills_header,limit,支払期限,5,,NO,@DATE,,
+PurchaseManagement,,t_bills_header,terms,支払方法,6,0,NO,@INT,,0: 振込、1: 引落とし
+PurchaseManagement,,t_bills_header,currency_id,通貨ID,7,,NO,@INT,,
+PurchaseManagement,,t_bills_header,payed_flag,支払済フラグ,8,0,NO,@INT,,0: 未払い、1: 支払済
+PurchaseManagement,,t_bills_header,delete_flag,削除フラグ,9,0,NO,@INT,,0: 未削除、1: 削除済み
+PurchaseManagement,,t_bills_header,create_user,作成者,10,,YES,@VARCHAR,,
+PurchaseManagement,,t_bills_header,create_datetime,作成日,11,,YES,@DATETIME,,
+PurchaseManagement,,t_bills_header,update_user,更新者,12,,YES,@VARCHAR,,
+PurchaseManagement,,t_bills_header,update_datetime,更新日,13,,YES,@DATETIME,,

@@ -1,0 +1,5 @@
+CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,TABLE_SCHEMA,TABLE_NAME,COLUMNS,CARDINARITY,REFERENCED_TABLE_SCHEMA,REFERENCED_TABLE_NAME,REFERENCED_COLUMNS,REFERENCED_CARDINARITY,CAPTION
+PurchaseManagement,,,,t_bills_header,vendor_id,0-*,,m_department,vendor_id,,
+PurchaseManagement,,,,t_bills_header,currency_id,0-*,,m_currency,currency_id,,
+PurchaseManagement,,,,m_department,company_id,0-*,,m_companies,company_id,,
+PurchaseManagement,,,,t_bills_detail,invoice_id,0-*,,t_bills_header,invoice_id,,
