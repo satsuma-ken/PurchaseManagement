@@ -52,7 +52,7 @@ class Bills_Header(Payment_Model):
     invoice_number = models.CharField(max_length=50)
     vendor_id = models.ForeignKey(Department, on_delete=models.PROTECT)
     publish_date = models.DateField(auto_now_add=True)
-    limit = models.DateField(auto_now_add=True)
+    limit_date = models.DateField(auto_now_add=True)
     TERMS_CHOICES = (
         (0, '振込'),
         (1, '引落'),
