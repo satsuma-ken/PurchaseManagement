@@ -27,8 +27,8 @@ class Department(Payment_Model):
     contact = models.CharField(max_length=50)
     post_number = models.CharField(max_length=20)
     address = models.CharField(max_length=100)
-    representative = models.CharField(max_length=20, null=True)
-    payment_account = models.CharField(max_length=100)
+    representative = models.CharField(max_length=20, null=True, blank=True)
+    payment_account = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.department_name
@@ -44,14 +44,22 @@ class Currency(Payment_Model):
 
 # 請求ヘッダ
 class Bills_Header(Payment_Model):
-    invoice_id = models.CharField(primary_key=True, max_length=20)
+    invoice_id = models.AutoField(primary_key=True)
     invoice_number = models.CharField(max_length=50)
     vendor_id = models.ForeignKey(Department, on_delete=models.PROTECT)
     publish_date = models.DateField(auto_now_add=True)
     limit = models.DateField(auto_now_add=True)
-    terms = models.IntegerField(default=0)
+    TERMS_CHOICES = (
+        (0, '振込'),
+        (1, '引落'),
+    )
+    terms = models.IntegerField(choices=TERMS_CHOICES, default=0)
     currency_id = models.ForeignKey(Currency, on_delete=models.CASCADE)
-    payed_flag = models.IntegerField(default=0)
+    PAYED_CHOICES = (
+        (0, '支払済'),
+        (1, '未払'),
+    )
+    payed_flag = models.IntegerField(choices=PAYED_CHOICES, default=0)
 
     def __str__(self):
         return self.invoice_number
@@ -59,7 +67,7 @@ class Bills_Header(Payment_Model):
 
 # 請求明細
 class Bills_Detail(Payment_Model):
-    invoice_id = models.CharField(max_length=20)
+    invoice_id = models.ForeignKey(Bills_Header, on_delete=models.CASCADE)
     invoice_detail_number = models.IntegerField()
     part_number = models.CharField(max_length=50)
     part_name = models.CharField(max_length=50)

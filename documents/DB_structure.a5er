@@ -89,7 +89,7 @@ TableOption=
 Page=MAIN
 Left=1000
 Top=500
-Field="請求ID","invoice_id","@VARCHAR","NOT NULL",0,"","",$FFFFFFFF,""
+Field="請求ID","invoice_id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
 Field="請求番号","invoice_number","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
 Field="仕入先ID","vendor_id","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
 Field="発行日","publish_date","@DATE","NOT NULL",,"","",$FFFFFFFF,""
@@ -100,7 +100,7 @@ Field="支払済フラグ","payed_flag","@INT","NOT NULL",,"0","0: 未払い、1
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20200511201747
+ModifiedDateTime=20200512103344
 Position="MAIN",1000,500,299,397
 ZOrder=2
 
