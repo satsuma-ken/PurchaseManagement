@@ -21,7 +21,7 @@
                     {% for bill in department.bills_header_set.all %}
                         <tr>
                             <td scope="row">
-                                <button class="btn btn-info">明細</button>
+                                <a class="btn btn-info text-white" href="{% url 'payment:bills_detail' bill.invoice_id %}">明細</a>
                             </td>
                             <td scope="row">{{ department.department_name }}</td>
                             <td scope="row">{{ bill.invoice_number }}</td>
@@ -38,4 +38,3 @@
         </tbody>
     </table>
 {% endblock content %}
-<h4>yahoo</h4>

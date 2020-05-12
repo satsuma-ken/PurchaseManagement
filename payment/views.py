@@ -2,7 +2,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.template import loader
 
-from .models import Company, Department, Bills_Header
+from .models import Company, Department, Bills_Header, Bills_Detail
 
 def index(request):
     company_list = Company.objects.order_by('-create_datetime')[:5]
@@ -31,5 +31,21 @@ def bills(request):
     context = {
         'department_list': department_list,
     }
-    print('bills')
     return render(request, 'payment/bills.html', context)
+
+def bills_detail(request, invoice_id):
+    bills_header = get_object_or_404(Bills_Header, invoice_id=invoice_id)
+    bills_details = get_list_or_404(Bills_Detail, invoice_id=invoice_id)
+    sumproduct = 0
+    for bill in bills_details:
+        sumproduct += bill.product
+    tax = sumproduct * 0.1
+    tax_adopt = sumproduct * 1.1
+    context = {
+        'bills_header': bills_header,
+        'bills_details': bills_details,
+        'sumproduct': sumproduct,
+        'tax': tax,
+        'tax_adopt': tax_adopt,
+    }
+    return render(request, 'payment/bills_detail.html', context)

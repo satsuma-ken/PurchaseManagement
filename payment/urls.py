@@ -9,4 +9,5 @@ urlpatterns = [
     path('<str:company_id>/results/', views.results, name='results'),
     path('<str:company_id>/vote', views.vote, name='vote'),
     path('bills/', views.bills, name='bills'),
+    path('bills/detail/<int:invoice_id>/', views.bills_detail, name='bills_detail'),
 ]

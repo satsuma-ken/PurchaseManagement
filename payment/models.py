@@ -77,9 +77,17 @@ class Bills_Detail(Payment_Model):
     part_name = models.CharField(max_length=50)
     unit_price = models.FloatField()
     quantity = models.IntegerField()
+    product = models.FloatField(default=0, editable=False)
 
     def __str__(self):
         return self.part_number
+    
+    def get_unit_price(self):
+        return str(self.unit_price)
+
+    def save(self, *args, **kwargs):
+        self.product = self.unit_price * self.quantity
+        super(Payment_Model, self).save(*args, **kwargs)
 
     class Meta:
         unique_together = (("invoice_id", "invoice_detail_number"))
