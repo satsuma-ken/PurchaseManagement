@@ -16,7 +16,7 @@
             {% if company_list %}
                 {% for company in company_list %}
                     <tr>
-                        <td scope="row">{{ company.company_id }}</td>
+                        <td scope="row"><a href="{% url 'payment:detail' company.company_id %}">{{ company.company_id }}</a></td>
                         <td scope="row">{{ company.company_name }}</td>
                     </tr>
                 {% endfor %}

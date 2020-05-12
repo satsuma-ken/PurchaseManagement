@@ -1,18 +1,22 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from django.shortcuts import render, get_object_or_404
 from django.template import loader
 
-from .models import Company
+from .models import Company, Department
 
 def index(request):
     company_list = Company.objects.order_by('-create_datetime')[:5]
-    template = loader.get_template('payment/index.html')
     context = {
-        'company_list': company_list
+        'company_list': company_list,
     }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'payment/index.html', context)
 
 def detail(request, company_id):
-    return HttpResponse("You're looking at company %s." % company_id)
+    company = get_object_or_404(Company, company_id=company_id)
+    context = {
+        'company': company,
+    }
+    return render(request, 'payment/detail.html', context)
 
 def results(request, company_id):
     response = "You're looking at the result of company %s."
