@@ -2,7 +2,11 @@ from django.db import models
 
 # 共通列用抽象クラス
 class Payment_Model(models.Model):
-    delete_flag = models.IntegerField(default=0, null=True)
+    DELETE_CHOICES = (
+        (0, '未削除'),
+        (1, '削除済'),
+    )
+    delete_flag = models.IntegerField(choices=DELETE_CHOICES, default=0, null=True)
     create_user = models.CharField(max_length=20, null=True, editable=False)
     create_datetime = models.DateTimeField(auto_now_add=True, null=True, editable=False)
     update_user = models.CharField(max_length=20, null=True, editable=False)
@@ -56,8 +60,8 @@ class Bills_Header(Payment_Model):
     terms = models.IntegerField(choices=TERMS_CHOICES, default=0)
     currency_id = models.ForeignKey(Currency, on_delete=models.CASCADE)
     PAYED_CHOICES = (
-        (0, '支払済'),
-        (1, '未払'),
+        (0, '未払い'),
+        (1, '支払済'),
     )
     payed_flag = models.IntegerField(choices=PAYED_CHOICES, default=0)
 
