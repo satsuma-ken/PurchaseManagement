@@ -27,7 +27,7 @@ class Company(Payment_Model):
 class Department(Payment_Model):
     vendor_id = models.CharField(primary_key=True, max_length=20)
     company_id = models.ForeignKey(Company, on_delete=models.CASCADE)
-    department_name = models.CharField(max_length=50, null=True)
+    department_name = models.CharField(max_length=50, null=True, blank=True)
     contact = models.CharField(max_length=50)
     post_number = models.CharField(max_length=20)
     address = models.CharField(max_length=100)
@@ -35,7 +35,7 @@ class Department(Payment_Model):
     payment_account = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
-        return self.department_name
+        return self.vendor_id
 
 # 通貨マスタ
 class Currency(Payment_Model):
