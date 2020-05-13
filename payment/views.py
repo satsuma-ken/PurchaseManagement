@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.template import loader
+from decimal import Decimal, ROUND_HALF_UP
 
 from .models import Company, Department, Bills_Header, Bills_Detail
 
@@ -36,16 +37,33 @@ def bills(request):
 def bills_detail(request, invoice_id):
     bills_header = get_object_or_404(Bills_Header, invoice_id=invoice_id)
     bills_details = get_list_or_404(Bills_Detail, invoice_id=invoice_id)
-    sumproduct = 0
+    sumproduct = Decimal("0")
     for bill in bills_details:
         sumproduct += bill.product
-    tax = sumproduct * 0.1
-    tax_adopt = sumproduct * 1.1
+    tax = sumproduct * Decimal("0.1")
+    tax_adopt = sumproduct * Decimal("1.1")
+    d_sumproduct = ""
+    d_tax = ""
+    d_tax_adopt = ""
+    if float(sumproduct).is_integer:
+        d_sumproduct = str(Decimal(sumproduct).quantize(Decimal("0"), ROUND_HALF_UP))
+    else:
+        d_sumproduct = str(float(sumproduct))
+
+    if float(tax).is_integer:
+        d_tax = str(Decimal(tax).quantize(Decimal("0"), ROUND_HALF_UP))
+    else:
+        d_tax = str(float(tax))
+    
+    if float(tax_adopt).is_integer:
+        d_tax_adopt = str(Decimal(tax_adopt).quantize(Decimal("0"), ROUND_HALF_UP))
+    else:
+        d_tax_adopt = str(float(tax_adopt))
     context = {
         'bills_header': bills_header,
         'bills_details': bills_details,
-        'sumproduct': sumproduct,
-        'tax': tax,
-        'tax_adopt': tax_adopt,
+        'sumproduct': d_sumproduct,
+        'tax': d_tax,
+        'tax_adopt': d_tax_adopt,
     }
     return render(request, 'payment/bills_detail.html', context)

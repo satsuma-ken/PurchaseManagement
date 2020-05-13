@@ -23,22 +23,25 @@
                         <td scope="row">{{ detail.invoice_detail_number }}</td>
                         <td scope="row">{{ detail.part_number }}</td>
                         <td scope="row">{{ detail.part_name }}</td>
-                        <td scope="row">{{ bills_header.currency_id.currency_mark |add:detail.get_unit_price }}</td>
-                        <td scope="row">{{ detail.quantity }}</td>
-                        <td scope="row">{{ detail.product }}</td>
+                        <td class="text-right" scope="row">{{ bills_header.currency_id.currency_mark |add:detail.get_unit_price }}</td>
+                        <td class="text-right" scope="row">{{ detail.quantity }}</td>
+                        <td class="text-right" scope="row">{{ bills_header.currency_id.currency_mark |add:detail.get_product }}</td>
                     </tr>
                 {% endfor %}
                     <tr>
                         <td scope="row" colspan=3></td>
-                        <td scope="row" colspan=2>消費税</td>
-                        <td scope="row">{{ tax }}</td>
+                        <td class="text-right" scope="row" colspan=2>合計</td>
+                        <td class="text-right" scope="row">{{ bills_header.currency_id.currency_mark |add:sumproduct }}</td>
                     </tr>
                     <tr>
-                        <tr>
-                            <td scope="row" colspan=3></td>
-                            <td scope="row" colspan=2>総計</td>
-                            <td scope="row">{{ tax_adopt }}</td>
-                        </tr>
+                        <td scope="row" colspan=3></td>
+                        <td class="text-right" scope="row" colspan=2>消費税</td>
+                        <td class="text-right" scope="row">{{ bills_header.currency_id.currency_mark |add:tax }}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row" colspan=3></td>
+                        <td class="text-right" scope="row" colspan=2>総計</td>
+                        <td class="text-right" scope="row">{{ bills_header.currency_id.currency_mark |add:tax_adopt }}</td>
                     </tr>
             {% else %}
                 <tr>

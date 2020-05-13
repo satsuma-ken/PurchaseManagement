@@ -1,0 +1,1 @@
+CURRENCY = 1
