@@ -70,6 +70,13 @@ class Bills_Header(Payment_Model):
     def __str__(self):
         return self.invoice_number
 
+    class Meta:
+        ordering = [
+            "limit_date",
+            "publish_date",
+        ]
+
+
 
 # 請求明細
 class Bills_Detail(Payment_Model):
@@ -103,7 +110,7 @@ class Bills_Detail(Payment_Model):
     class Meta:
         unique_together = (("invoice_id", "invoice_detail_number"))
         ordering = [
-            "invoice_detail_number"
+            "invoice_detail_number",
         ]
         
         
