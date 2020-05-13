@@ -29,7 +29,7 @@ class Company(Payment_Model):
 class Department(Payment_Model):
     vendor_id = models.CharField(primary_key=True, max_length=20)
     company_id = models.ForeignKey(Company, on_delete=models.CASCADE)
-    department_name = models.CharField(max_length=50, null=True, blank=True)
+    department_name = models.CharField(max_length=50, default="", blank=True)
     contact = models.CharField(max_length=50)
     post_number = models.CharField(max_length=20)
     address = models.CharField(max_length=100)
@@ -76,11 +76,9 @@ class Bills_Header(Payment_Model):
             "publish_date",
         ]
 
-
-
 # 請求明細
 class Bills_Detail(Payment_Model):
-    invoice_id = models.ForeignKey(Bills_Header, on_delete=models.CASCADE)
+    invoice_id = models.ForeignKey(Bills_Header, on_delete=models.CASCADE, related_name="header")
     invoice_detail_number = models.IntegerField()
     part_number = models.CharField(max_length=50)
     part_name = models.CharField(max_length=50)

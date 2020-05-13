@@ -23,7 +23,12 @@
                             <td scope="row">
                                 <a class="btn btn-info text-white" href="{% url 'payment:bills_detail' bill.invoice_id %}">明細</a>
                             </td>
-                            <td scope="row">{{ department.department_name }}</td>
+                            <td scope="row">
+                                <p>
+                                    {{ department.company_id.company_name }}<br>
+                                    {{ department.department_name }}
+                                </p>
+                            </td>
                             <td scope="row">{{ bill.invoice_number }}</td>
                             <td scope="row">{{ bill.publish_date }}</td>
                             <td scope="row">{{ bill.limit_date }}</td>
