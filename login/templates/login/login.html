@@ -12,7 +12,7 @@
                         {{ field.errors }}
                         <hr>
                     {% endfor %}
-                    <button type="submit" class="btn btn-success btn-lg btn-block" href="{% url 'payment:index' %}">ログイン</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">ログイン</button>
                     <input type="hidden" name="next" value="{{ next }}" />
                     {% csrf_token %}
                 </div>
