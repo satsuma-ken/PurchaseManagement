@@ -1,0 +1,11 @@
+{{ user.email }} 様
+会員登録手続きを行っていただき、ありがとうございます。
+
+まだ、会員登録手続きは完了しておりません。
+下記URLよりサイトにアクセスの上、引き続き会員登録をお願いいたします。
+
+本登録用URL
+{{ protocol }}://{{ domain }}{% url 'login:user_create_complete' token %}
+
+ほな
+{% csrf_token %}

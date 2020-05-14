@@ -2,6 +2,8 @@
 {% block content %}
     <form action="" method="POST">
         <div class="col-md-6 offset-md-3">
+
+            <!-- ログインエリア -->
             <div class="card">
                 <div class="card-body">
                     {{ form.non_field_errors }}
@@ -10,11 +12,19 @@
                         {{ field.errors }}
                         <hr>
                     {% endfor %}
-                    <button type="submit" class="btn btn-success btn-lg btn-block" >ログイン</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block" href="{% url 'payment:index' %}">ログイン</button>
                     <input type="hidden" name="next" value="{{ next }}" />
                     {% csrf_token %}
                 </div>
             </div>
+
+            <!-- 会員登録エリア -->
+            <div class="card">
+                <div class="card-body">
+                    <a class="btn btn-success btn-lg btn-block" href="{% url 'login:user_create' %}">会員登録</a>
+                </div>
+            </div>
+            
         </div>
     </form>
 {% endblock %}

@@ -132,3 +132,17 @@ AUTH_USER_MODEL = 'login.User'
 
 LOGIN_URL = 'login.login'
 LOGIN_REDIRECT_URL = 'login.top'
+
+# E-mail settings.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# E-mail connection.
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER ='satsumanagement@gmail.com'
+EMAIL_HOST_PASSWORD ='agpoauirptgqk9rgkK'
+EMAIL_USE_TLS = True
+
+# Default E-mail address.
+DEFAULT_FROM_EMAIL = 'satsumanagement@gmail.com'
+
