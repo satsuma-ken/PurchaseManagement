@@ -28,6 +28,9 @@
             <li>
               <a class="nav-item nav-link" href="{% url 'login:logout' %}">ログアウト</a>
             </li>
+            <li>
+              <a class="nav-item nav-link" href="{% url 'login:password_change' %}">パスワードの変更</a>
+            </li>
           {% else %}
             <li class="nav-item">
               <a class="nav-item nav-link" href="{% url 'login:login' %}">
